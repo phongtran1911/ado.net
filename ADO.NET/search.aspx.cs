@@ -31,8 +31,17 @@ namespace ADO.NET
                 lst.Add(new SqlParameter("@company", txtCompany.Text));
 
                 DataTable data = db.ExcuteProc("sp_F03", lst);
-                grv.DataSource = data;
-                grv.DataBind();
+                if (data.Rows.Count == 0)
+                {
+                    Response.Write("Khong co nhan vien nay trong cong ty");
+                    grv.DataSource = null;
+                    grv.DataBind();
+                }
+                else
+                {
+                    grv.DataSource = data;
+                    grv.DataBind();
+                }
             }
         }
     }
