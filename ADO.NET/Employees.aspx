@@ -18,7 +18,7 @@
                     <asp:TextBox ID="EmpCode" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="EmpCode" ForeColor="Red">Vui lòng nhập mã</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="EmpCode" ForeColor="Red"
-                        ValidationExpression="^[1-9]\d{0,4}$" ErrorMessage="Không được nhập ký tự và lớn hơn 5 số"></asp:RegularExpressionValidator>
+                        ValidationExpression="^[0-9]\d{0,4}$" ErrorMessage="Không được nhập ký tự và lớn hơn 5 số"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -52,8 +52,8 @@
                 <td>
                     <label>Active</label></td>
                 <td>
-                    <asp:RadioButton ID="rdoTrue" runat="server" Checked="true" Text="True" GroupName="rdoActive" CssClass="checkbox-inline"/>
-                    <asp:RadioButton runat="server" Text="False" GroupName="rdoActive" CssClass="checkbox-inline"/>
+                    <asp:RadioButton ID="rdoTrue" runat="server" Checked="true" Text="True" GroupName="rdoActive" CssClass="checkbox-inline" />
+                    <asp:RadioButton runat="server" Text="False" GroupName="rdoActive" CssClass="checkbox-inline" />
                 </td>
             </tr>
             <tr>
@@ -90,12 +90,12 @@
                 <td>
                     <asp:TextBox ID="txtAddress" runat="server" CssClass="input-lg"></asp:TextBox></td>
             </tr>
-            <tr >
+            <tr>
                 <td>
                     <label>Gender</label></td>
                 <td>
-                    <asp:RadioButton ID="rdoSex" runat="server" Text="Nam" Checked="true" GroupName="rdoSex" CssClass="checkbox-inline"/>
-                    <asp:RadioButton runat="server" Text="Nữ" GroupName="rdoSex" CssClass="checkbox-inline"/>
+                    <asp:RadioButton ID="rdoSex" runat="server" Text="Nam" Checked="true" GroupName="rdoSex" CssClass="checkbox-inline" />
+                    <asp:RadioButton runat="server" Text="Nữ" GroupName="rdoSex" CssClass="checkbox-inline" />
                 </td>
             </tr>
             <tr>

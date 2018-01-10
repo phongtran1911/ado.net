@@ -30,28 +30,28 @@ namespace ADO.NET
 
             _logger.Info("Stop program.");
             DataAccess a = new DataAccess();
-                string da = "select * from HR_tblEmp";
-                string da1 = "select LSDeptID from LS_tblDepartment";
-                string da2 = "select LSJobTitleID from LS_tblJobTitle";
-                string da3 = "select LSNationalityID from LS_tblNationality";
+            string da = "select * from HR_tblEmp";
+            string da1 = "select LSDeptID from LS_tblDepartment";
+            string da2 = "select LSJobTitleID from LS_tblJobTitle";
+            string da3 = "select LSNationalityID from LS_tblNationality";
 
-                GV1.DataSource = a.ExcuteReader(da);
-                GV1.DataBind();
+            GV1.DataSource = a.ExcuteReader(da);
+            GV1.DataBind();
 
-                ddldept.DataSource = a.ExcuteReader(da1);
-                ddldept.DataTextField = "LSDeptID";
-                ddldept.DataValueField = "LSDeptID";
-                ddldept.DataBind();
+            ddldept.DataSource = a.ExcuteReader(da1);
+            ddldept.DataTextField = "LSDeptID";
+            ddldept.DataValueField = "LSDeptID";
+            ddldept.DataBind();
 
-                ddlJob.DataSource = a.ExcuteReader(da2);
-                ddlJob.DataTextField = "LSJobTitleID";
-                ddlJob.DataValueField = "LSJobTitleID";
-                ddlJob.DataBind();
+            ddlJob.DataSource = a.ExcuteReader(da2);
+            ddlJob.DataTextField = "LSJobTitleID";
+            ddlJob.DataValueField = "LSJobTitleID";
+            ddlJob.DataBind();
 
-                ddlNation.DataSource = a.ExcuteReader(da3);
-                ddlNation.DataTextField = "LSNationalityID";
-                ddlNation.DataValueField = "LSNationalityID";
-                ddlNation.DataBind();
+            ddlNation.DataSource = a.ExcuteReader(da3);
+            ddlNation.DataTextField = "LSNationalityID";
+            ddlNation.DataValueField = "LSNationalityID";
+            ddlNation.DataBind();
         }
         public bool IsNumber(string pText)
         {

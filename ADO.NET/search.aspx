@@ -12,13 +12,13 @@
     <form id="form1" runat="server">
         <div>
             <table class="table table-hover">
-             
+
                 <tr>
                     <td class="label-info">EmpCode</td>
                     <td>
                         <asp:TextBox ID="txtEmpCode" runat="server" CssClass="input-lg label-default"></asp:TextBox>
                         <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmpCode" ForeColor="Red"
-                            ValidationExpression="^[1-9]\d{0,4}$" ErrorMessage="Không được nhập ký tự và lớn hơn 5 số"></asp:RegularExpressionValidator>
+                            ValidationExpression="^[0-9]\d{0,4}$" ErrorMessage="Không được nhập ký tự và lớn hơn 5 số"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -33,8 +33,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button1" runat="server" Text="Tìm kiếm" OnClick="Button1_Click" CssClass="btn btn-info"/>
-                        <a href="Employees.aspx" class ="btn btn-link">Quay về trang danh sách</a>
+                        <asp:Button ID="Button1" runat="server" Text="Tìm kiếm" OnClick="Button1_Click" CssClass="btn btn-info" />
+                        <a href="Employees.aspx" class="btn btn-link">Quay về trang danh sách</a>
 
                     </td>
                 </tr>
