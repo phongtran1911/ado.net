@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace ADO.NET
 {
     public class DataAccess
     {
+        string cs = ConfigurationManager.ConnectionStrings["DBBC"].ConnectionString;
         public DataTable ExcuteReader(string sql)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=company;Integrated Security=True"))
+
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -22,7 +25,7 @@ namespace ADO.NET
         }
         public bool ExcuteNonQuery(string sql)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=company;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
                 SqlCommand a = new SqlCommand(sql);
@@ -34,7 +37,7 @@ namespace ADO.NET
         }
         public DataTable ExcuteProc(string sql, List<SqlParameter> lst)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=company;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -51,7 +54,7 @@ namespace ADO.NET
         }
         public bool ExcuteNonQueryPro(string sql, List<SqlParameter> lst)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=company;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);

@@ -10,9 +10,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <table class="table table-bordered">
+        <table class="table table-hover">
             <tr>
-                <td>
+                <td class="col-md-6">
                     <label>Empcode</label></td>
                 <td>
                     <asp:TextBox ID="EmpCode" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
@@ -25,7 +25,7 @@
                 <td>
                     <label>JoinDate</label></td>
                 <td>
-                    <asp:TextBox ID="txtJoinDate" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtJoinDate" runat="server" TextMode="Date" CssClass="input-sm"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtJoinDate" ForeColor="Red">Vui lòng nhập ngày sinh</asp:RequiredFieldValidator>
                     <asp:CompareValidator runat="server" ControlToValidate="txtJoinDate" ErrorMessage="Sai kiểu dữ liệu ngày tháng"
                         Operator="DataTypeCheck" Type="Date"></asp:CompareValidator>
@@ -36,7 +36,7 @@
                     <label>LSDeptID </label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddldept" runat="server" AppendDataBoundItems="True" CssClass="form-control">
+                    <asp:DropDownList ID="ddldept" runat="server" AppendDataBoundItems="True" CssClass="list-group-item">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -44,7 +44,7 @@
                 <td>
                     <label>LSJobtitleID</label></td>
                 <td>
-                    <asp:DropDownList ID="ddlJob" runat="server" AppendDataBoundItems="True" CssClass="form-control">
+                    <asp:DropDownList ID="ddlJob" runat="server" AppendDataBoundItems="True" CssClass="list-group-item">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -52,15 +52,15 @@
                 <td>
                     <label>Active</label></td>
                 <td>
-                    <asp:RadioButton ID="rdoTrue" runat="server" Checked="true" Text="True" GroupName="rdoActive" />
-                    <asp:RadioButton runat="server" Text="False" GroupName="rdoActive" />
+                    <asp:RadioButton ID="rdoTrue" runat="server" Checked="true" Text="True" GroupName="rdoActive" CssClass="checkbox-inline"/>
+                    <asp:RadioButton runat="server" Text="False" GroupName="rdoActive" CssClass="checkbox-inline"/>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>FirstName</label></td>
                 <td>
-                    <asp:TextBox ID="txtFirst" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtFirst" runat="server" CssClass="input-lg"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirst" ForeColor="Red">Vui lòng nhập tên</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="txtFirst" ForeColor="Red"
                         ValidationExpression="^[a-zA-Z\s\W]{0,30}" ErrorMessage="Tên không được nhập số và ký tự đặc biệt và không quá 30 ký tự"></asp:RegularExpressionValidator>
@@ -70,7 +70,7 @@
                 <td>
                     <label>LastName</label></td>
                 <td>
-                    <asp:TextBox ID="txtLast" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtLast" runat="server" CssClass="input-lg"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLast" ForeColor="Red">Vui lòng nhập tên</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="txtLast" ForeColor="Red"
                         ValidationExpression="^[a-zA-Z\s\W]{0,30}" ErrorMessage="Tên không được nhập số và ký tự đặc biệt và không quá 30 ký tự"></asp:RegularExpressionValidator>
@@ -80,7 +80,7 @@
                 <td>
                     <label>DOB</label></td>
                 <td>
-                    <asp:TextBox ID="txtDOB" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDOB" runat="server" TextMode="Date" CssClass="input-sm"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDOB" ForeColor="Red">Vui lòng nhập ngày sinh</asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -88,34 +88,34 @@
                 <td>
                     <label>Address</label></td>
                 <td>
-                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox></td>
+                    <asp:TextBox ID="txtAddress" runat="server" CssClass="input-lg"></asp:TextBox></td>
             </tr>
-            <tr>
+            <tr >
                 <td>
                     <label>Gender</label></td>
                 <td>
-                    <asp:RadioButton ID="rdoSex" runat="server" Text="Nam" Checked="true" GroupName="rdoSex" />
-                    <asp:RadioButton runat="server" Text="Nữ" GroupName="rdoSex" />
+                    <asp:RadioButton ID="rdoSex" runat="server" Text="Nam" Checked="true" GroupName="rdoSex" CssClass="checkbox-inline"/>
+                    <asp:RadioButton runat="server" Text="Nữ" GroupName="rdoSex" CssClass="checkbox-inline"/>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>LSNationalityID</label></td>
                 <td>
-                    <asp:DropDownList ID="ddlNation" runat="server" AppendDataBoundItems="True" CssClass="form-control">
+                    <asp:DropDownList ID="ddlNation" runat="server" AppendDataBoundItems="True" CssClass="list-group-item">
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnAdd" runat="server" OnClick="Button1_Click" Text="Thêm" class="btn-sm" />
+                    <asp:Button ID="btnAdd" runat="server" OnClick="Button1_Click" Text="Thêm" class="btn btn-danger" />
                     <a href="search.aspx" class="btn-link">Tìm Kiếm</a>
 
                 </td>
             </tr>
         </table>
 
-        <asp:GridView ID="GV1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" CssClass="table table-bordered" Width="1500px">
+        <asp:GridView ID="GV1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="0px" CellPadding="0" AutoGenerateColumns="False" CssClass="table table-hover" Width="1500px">
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
                 <asp:BoundField HeaderText="EmpID" DataField="EmpID" />

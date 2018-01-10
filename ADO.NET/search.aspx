@@ -11,25 +11,25 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="table table-bordered">
+            <table class="table table-hover">
              
                 <tr>
-                    <td>EmpCode</td>
+                    <td class="label-info">EmpCode</td>
                     <td>
-                        <asp:TextBox ID="txtEmpCode" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtEmpCode" runat="server" CssClass="input-lg label-default"></asp:TextBox>
                         <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmpCode" ForeColor="Red"
                             ValidationExpression="^[1-9]\d{0,4}$" ErrorMessage="Không được nhập ký tự và lớn hơn 5 số"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td>FullName</td>
+                    <td class="label-info">FullName</td>
                     <td>
-                        <asp:TextBox ID="txtFullname" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="txtFullname" runat="server" CssClass="input-lg label-default"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>CompanyName</td>
+                    <td class="label-info">CompanyName</td>
                     <td>
-                        <asp:TextBox ID="txtCompany" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="txtCompany" runat="server" CssClass="input-lg label-default"> </asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>
@@ -43,15 +43,15 @@
 
             </table>
             <asp:GridView runat="server" ID="grv" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4"
-                GridLines="Horizontal" Width="1346px" CssClass="table table-bordered">
+                GridLines="Horizontal" Width="1346px" CssClass="table table-hover">
                 <Columns>
                     <asp:BoundField DataField="EmpCode" HeaderText="EmpCode" />
                     <asp:BoundField HeaderText="FullName" DataField="Fullname" />
-                    <asp:BoundField HeaderText="LSCompanyName" DataField="LSCompanyName" />
-                    <asp:BoundField HeaderText="LSDeptName" DataField="LSDeptName" />
+                    <asp:BoundField HeaderText="LSCompanyName" DataField="Company" />
+                    <asp:BoundField HeaderText="LSDeptName" DataField="Dept" />
                     <asp:BoundField HeaderText="JoinDate" DataField="JoinDate" />
-                    <asp:BoundField HeaderText="LSJobTitleName" DataField="LSJobTitleName" />
-                    <asp:BoundField HeaderText="LSNationalityName" DataField="LSNationalityName" />
+                    <asp:BoundField HeaderText="LSJobTitleName" DataField="JobTitle" />
+                    <asp:BoundField HeaderText="LSNationalityName" DataField="Nationlity" />
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#333333" />
                 <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,13 +13,23 @@ namespace ADO.NET
 {
     public partial class Employees : System.Web.UI.Page
     {
+        private static readonly ILog _logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
-            string CS = "Data Source=.;Initial Catalog=company;Integrated Security=True";
+            _logger.Info("Start program.");
 
-            using (SqlConnection con = new SqlConnection(CS))
+            try
             {
-                DataAccess a = new DataAccess();
+                string s = "abc";
+                int i = int.Parse(s);
+            }
+            catch (Exception ex)
+            {
+                _logger.Debug(ex);
+            }
+
+            _logger.Info("Stop program.");
+            DataAccess a = new DataAccess();
                 string da = "select * from HR_tblEmp";
                 string da1 = "select LSDeptID from LS_tblDepartment";
                 string da2 = "select LSJobTitleID from LS_tblJobTitle";
@@ -41,7 +52,6 @@ namespace ADO.NET
                 ddlNation.DataTextField = "LSNationalityID";
                 ddlNation.DataValueField = "LSNationalityID";
                 ddlNation.DataBind();
-            }
         }
         public bool IsNumber(string pText)
         {
@@ -113,6 +123,7 @@ namespace ADO.NET
                 db.ExcuteNonQueryPro("sp_F02", lst);
                 GV1.DataSource = db.ExcuteReader(sql);
                 GV1.DataBind();
+                Response.Write("Success!");
             }
         }
     }

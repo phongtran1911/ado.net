@@ -35,3 +35,5 @@ D:\Projects\ADO.NET\ADO.NET\obj\Debug\ADO.NET.csprojResolveAssemblyReference.cac
 D:\Projects\ADO.NET\ADO.NET\obj\Debug\ADO.NET.csproj.CoreCompileInputs.cache
 D:\Projects\ADO.NET\ADO.NET\obj\Debug\ADO.NET.dll
 D:\Projects\ADO.NET\ADO.NET\obj\Debug\ADO.NET.pdb
+D:\Projects\ADO.NET\ADO.NET\bin\log4net.dll
+D:\Projects\ADO.NET\ADO.NET\bin\log4net.xml

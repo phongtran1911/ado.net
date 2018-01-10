@@ -26,9 +26,9 @@ namespace ADO.NET
             {
                 DataAccess db = new DataAccess();
                 List<SqlParameter> lst = new List<SqlParameter>();
-                lst.Add(new SqlParameter("@empcode", txtEmpCode.Text));
-                lst.Add(new SqlParameter("@fullname", txtFullname.Text));
-                lst.Add(new SqlParameter("@company", txtCompany.Text));
+                lst.Add(new SqlParameter("@EmpCode", txtEmpCode.Text));
+                lst.Add(new SqlParameter("@FullName", txtFullname.Text));
+                lst.Add(new SqlParameter("@Company", txtCompany.Text));
 
                 DataTable data = db.ExcuteProc("sp_F03", lst);
                 if (data.Rows.Count == 0)
